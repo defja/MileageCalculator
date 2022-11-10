@@ -12,6 +12,7 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -49,8 +50,14 @@ public class MileageCalculatorNoConversion extends Application {
     private ToggleGroup tgConv = new ToggleGroup();
     
     private GridPane mainPane = new GridPane();
-    
+	
+	private ComboBox<String> cbo = new ComboBox<>();
+	
     public void start(Stage primaryStage) {   	
+		
+	    // Add Strings to combo box
+	    cbo.getItems().addAll(defaultResult, altResult);
+		
     	// set toggle group for RadioButtons
     	rbMPG.setToggleGroup(tgConv);
     	rbKPL.setToggleGroup(tgConv);
